@@ -1,0 +1,25 @@
+<p *ngFor="let slab of slabs; index as i">
+    <strong>{{i+1}}.</strong>
+    Length: <input (change)="updateCalculations()" [(ngModel)]="slab.length" placeholder="Length" type="number">
+    Width: <input (change)="updateCalculations()" [(ngModel)]="slab.width" placeholder="Width" type="number">
+    Count: <input (change)="updateCalculations()" [(ngModel)]="slab.count" placeholder="Count" type="number"> =
+    {{slab.getTotalArea()}}
+</p>
+<br />
+<button (click)="addSlab()">add slab</button>
+
+<br />
+Rate: <input (change)="updateCalculations()" [(ngModel)]="rate" placeholder="Rate" type="number">
+<br />
+Cartage: <input (change)="updateCalculations()" [(ngModel)]="cartage" placeholder="Cartage" type="number">
+<br />
+<button (click)="updateCalculations()">update total Amount</button>
+<br />
+Pieces: {{totalSlabs}}
+<br />
+Quantity: {{totalArea}}
+<br />
+Total Amount: {{totalAmount}}
+
+<!-- <button (click)="saveToFile()">Download Data</button> -->
+<!-- <button (click)="loadFronFile()">Upload Data</button> -->
