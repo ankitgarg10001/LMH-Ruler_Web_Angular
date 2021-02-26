@@ -1,9 +1,11 @@
 export class Slab {
-    length: number = 0;
-    width: number = 0;;
-    count: number = 1;;
+    length: number | undefined;
+    width: number | undefined;
+    count: number | undefined;
 
     getTotalArea(): number {
-        return this.length*this.width*this.count/144;
+        if (this.length && this.width && this.count)
+            return this.length * this.width * this.count / 144;
+        return 0;
     }
 }

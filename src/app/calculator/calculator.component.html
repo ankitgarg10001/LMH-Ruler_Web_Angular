@@ -1,10 +1,39 @@
-<p *ngFor="let slab of slabs; index as i">
-    <strong>{{i+1}}.</strong>
-    Length: <input (change)="updateCalculations()" [(ngModel)]="slab.length" placeholder="Length" type="number">
-    Width: <input (change)="updateCalculations()" [(ngModel)]="slab.width" placeholder="Width" type="number">
-    Count: <input (change)="updateCalculations()" [(ngModel)]="slab.count" placeholder="Count" type="number"> =
-    {{slab.getTotalArea()}}
-</p>
+<div class="Table">
+    <div class="Heading Row">
+        <div class="Cell">
+            No.
+        </div>
+        <div class="Cell">
+            Length
+        </div>
+        <div class="Cell">
+            Width
+        </div>
+        <div class="Cell">
+            Count
+        </div>
+        <div class="Cell">
+            Total
+        </div>
+    </div>
+
+    <div *ngFor="let slab of slabs; index as i" class="Row">
+        <div class="Cell"><strong>{{i+1}}.</strong></div>
+
+        <div class="Cell"><input (change)="updateCalculations()" [(ngModel)]="slab.length" placeholder="Length"
+                type="number"></div>
+
+        <div class="Cell"><input (change)="updateCalculations()" [(ngModel)]="slab.width" placeholder="Width"
+                type="number">
+        </div>
+
+        <div class="Cell"><input (change)="updateCalculations()" [(ngModel)]="slab.count" placeholder="Count"
+                type="number">
+        </div>
+
+        <div class="Cell">{{slab.getTotalArea()}}</div>
+    </div>
+</div>
 <br />
 <button (click)="addSlab()">add slab</button>
 

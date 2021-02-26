@@ -34,7 +34,7 @@ export class CalculatorComponent implements OnInit {
   }
   updateSlabCount() {
     this.totalSlabs = this.slabs.map(s => {
-      if (s.getTotalArea() > 0)
+      if (s.getTotalArea() > 0 && typeof s.count !== 'undefined')
         return s.count;
       return 0;
     }
